@@ -28,5 +28,17 @@ it 'should not pass without a name' do
     expect(@product.errors.full_messages).to eq ["Name can't be blank"]
          end
 
+# 2. Validates : price, presence: tue
+it 'should not pass without a price' do
+    @category = Category.new(name: 'test 2')
+    @product = Product.new(
+      name: 'Test product',
+      price: nil,
+      quantity: 4,
+      category: @category
+    )
+    expect(@product).to_not be_valid
+    expect(@product.errors.full_messages).to eq ["Price is not a number", "Price can't be blank"]
+        end
     end
 end
