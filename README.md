@@ -32,6 +32,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * PostgreSQL 9.x
 * Stripe
 
-## Screen Shots
+## Screen Shot
 
 ![](app/assets/images/jungless.png)
