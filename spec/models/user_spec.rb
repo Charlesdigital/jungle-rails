@@ -16,8 +16,8 @@ RSpec.describe User, type: :model do
 
    it "Don't save user when passwords don't match" do
     user = User.new({
-      first_name: 'bob',
-      last_name: 'lee',
+      first_name: 'Bob',
+      last_name: 'Lee',
       email: 'test@gmail.com',
       password: '123',
       password_confirmation: '123'
@@ -29,6 +29,20 @@ RSpec.describe User, type: :model do
     expect(find_user).not_to exist
   end
 
+  it "Don't save a user if their email is not unique" do
+    user = User.new({
+      first_name: 'Bob',
+      last_name: 'Lee',
+      email: 'test@gmail.com',
+      password: '123',
+      password_confirmation: '123'
+    })
+    user.save
+
+    find_user = User.where(first_name: 'Mary')
+    puts "Find user: #{find_user.inspect}"
+    expect(find_user).not_to exist
+  end
 
     end
 end
