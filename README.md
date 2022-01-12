@@ -34,4 +34,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screen Shot
 
-![](app/assets/images/jungless.png)
+![](app/assets/images/junglescreenshot.png)
